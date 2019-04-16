@@ -178,7 +178,7 @@ However, it may be useful to keep your old branch as a record.
 
 Copyright © 2019 the author(s):
 
-    * Ben Golightly \<golightly.ben@googlemail.com\>
+* Ben Golightly \<golightly.ben@googlemail.com\>
 
 This text is provided "as is" and without any express or implied warranties.
 Copying and distribution of this text, with or without modification, are

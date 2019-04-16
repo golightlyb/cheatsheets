@@ -112,7 +112,7 @@ Squash minor commits by editing as follows:
 Once saved, you'll have a chance to edit the commit messages. You'll see
 something like this:
 
-    # This is a combination of 4 commits.
+    # This is a combination of 3 commits.
     # The first commit's message is:
     Suppress rendering of boolean attributes when the value is False
 

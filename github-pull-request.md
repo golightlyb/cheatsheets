@@ -150,7 +150,7 @@ The GitHub website will automatically prompt you to make a pull request.
 You can also do this by going to your fork's branches on the GitHub website,
 and making a pull request from a specific branch.
 
-![Making a pull request](images/github-pull-request/fork.png)
+![Making a pull request](images/github-pull-request/pull-request.png)
 
 
 

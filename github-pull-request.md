@@ -1,10 +1,10 @@
-How to send a Pull Request on GitHub
+﻿How to send a Pull Request on GitHub
 ====================================
 
 By Cloning the Original Project
 --------------------------------------------------------------------------------
 
-### Clone (download) the reposoitory that you wish to contribute to.
+### Clone (download) the repository that you wish to contribute to.
 
 (Replace `$username` and `$repo` with appropriate values for the original
 project)

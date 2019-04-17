@@ -10,98 +10,98 @@ XML Declaration
 * `[...]` denotes optional content and `|` denotes "or".
 * The arguments are **not** attributes and must be given in this order.
 * You probably want `encoding`, but you probably don't need `standalone`.
-* You probably want only version "1.0" because it has the widest support.
+* You probably want only version `1.0` because it has the widest support.
 
 
 HTML5
 --------------------------------------------------------------------------------
 
-<!doctype html>
-<html lang="en-gb">
-    <head>
-        <meta charset="utf-8" /> 
-        <title>...</title>
+    <!doctype html>
+    <html lang="en-gb">
+        <head>
+            <meta charset="utf-8" /> 
+            <title>...</title>
 
-        <meta name="description" content="..." />
+            <meta name="description" content="..." />
 
-        <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86" />
-        
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="..." />
+            <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86" />
+            
+            <link rel="icon" href="/favicon.ico" />
+            <link rel="canonical" href="..." />
 
-        <script defer="defer" src="..."></script>
+            <script defer="defer" src="..."></script>
 
-        <style>[inline some CSS to prioritise visible content]</style>
-        <style>
-            <!--// a11y //-->
-            a.hidden-but-focusable
-            {
-                position: absolute;
-                left:-999px; top: -999px;
-                width: 1px; height: 1px;
-                overflow: hidden;
-                z-index: -9999;
-            }
-            a.hidden-but-focusable:hover,
-            a.hidden-but-focusable:focus,
-            a.hidden-but-focusable:active
-            {
-                font-size: 20px;
-                color: #00F; background-color: #FFF;
-                left: 0px; top: 0px;
-                padding: 15px; margin: 15px;
-                width: auto; height: auto;
-                overflow: display;
-                border: 4px dotted #00F;
-                z-index: 9999;
-            }
-            a.hidden-but-focusable > span
-            {
-                display: block;
-                font-size: 16px;
-                color: #000;
-            }
-            span.webfont-one {
-                font-family: WebfontOne;
-            }
-        </style>
+            <style>[inline some CSS to prioritise visible content]</style>
+            <style>
+                <!--// a11y //-->
+                a.hidden-but-focusable
+                {
+                    position: absolute;
+                    left:-999px; top: -999px;
+                    width: 1px; height: 1px;
+                    overflow: hidden;
+                    z-index: -9999;
+                }
+                a.hidden-but-focusable:hover,
+                a.hidden-but-focusable:focus,
+                a.hidden-but-focusable:active
+                {
+                    font-size: 20px;
+                    color: #00F; background-color: #FFF;
+                    left: 0px; top: 0px;
+                    padding: 15px; margin: 15px;
+                    width: auto; height: auto;
+                    overflow: display;
+                    border: 4px dotted #00F;
+                    z-index: 9999;
+                }
+                a.hidden-but-focusable > span
+                {
+                    display: block;
+                    font-size: 16px;
+                    color: #000;
+                }
+                span.webfont-one {
+                    font-family: WebfontOne;
+                }
+            </style>
 
-        <noscript id="deferred-styles">
-            <!--// https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery //-->
-            <link rel="stylesheet" type="text/css" href="..." />
-            <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=FontOne:400,700|FontTwo:400,700" />
-        </noscript>
-    </head>
-    <body>
-        <a class="hidden-but-focusable" href="#main">Skip to main content<span>(click or press enter to skip; tab to continue to navigation)</span></a>
+            <noscript id="deferred-styles">
+                <!--// https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery //-->
+                <link rel="stylesheet" type="text/css" href="..." />
+                <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=FontOne:400,700|FontTwo:400,700" />
+            </noscript>
+        </head>
+        <body>
+            <a class="hidden-but-focusable" href="#main">Skip to main content<span>(click or press enter to skip; tab to continue to navigation)</span></a>
 
-        <span class="hidden-but-focusable webfont-one"><b>F<i>o</i></b><i>n</i>t</span>
-        <span class="hidden-but-focusable webfont-two"><b>F<i>o</i></b><i>n</i>t</span>
+            <span class="hidden-but-focusable webfont-one"><b>F<i>o</i></b><i>n</i>t</span>
+            <span class="hidden-but-focusable webfont-two"><b>F<i>o</i></b><i>n</i>t</span>
 
-        <nav>
-            [...]
-        </nav>
+            <nav>
+                [...]
+            </nav>
 
-        <main id="main">
-            [...]
-        </main>
+            <main id="main">
+                [...]
+            </main>
 
-        <script>
-            var loadDeferredStyles = function()
-            {
-                var addStylesNode = document.getElementById("deferred-styles");
-                var replacement = document.createElement("div");
-                replacement.innerHTML = addStylesNode.textContent;
-                document.body.appendChild(replacement)
-                addStylesNode.parentElement.removeChild(addStylesNode);
-            };
-            var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-              window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-            if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-            else window.addEventListener('load', loadDeferredStyles);
-        </script>
-    </body>
-</html>
+            <script>
+                var loadDeferredStyles = function()
+                {
+                    var addStylesNode = document.getElementById("deferred-styles");
+                    var replacement = document.createElement("div");
+                    replacement.innerHTML = addStylesNode.textContent;
+                    document.body.appendChild(replacement)
+                    addStylesNode.parentElement.removeChild(addStylesNode);
+                };
+                var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                  window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+                if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+                else window.addEventListener('load', loadDeferredStyles);
+            </script>
+        </body>
+    </html>
 
 
 * Notes on the "viewport" meta tag:
